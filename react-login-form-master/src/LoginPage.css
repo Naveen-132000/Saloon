@@ -1,0 +1,117 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://wallpapers.com/images/hd/hair-salon-styling-tools-o61iiw1d0tgmc0u9.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(15px); /* Increased blur effect */
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with some transparency */
+    padding: 40px; /* Padding around the card */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Increased max width */
+    margin: 20px; /* Margin for spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+h2 {
+    color: #fff; /* Change the heading color */
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Stronger text shadow for readability */
+    font-size: 36px; /* Increase font size */
+}
+
+.sign-up-text {
+    color: #fff; /* Sign-up text color */
+    font-size: 24px; /* Increased size */
+    text-align: center; /* Center the sign-up text */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Shadow for decoration */
+    margin: 20px 0; /* Margin for spacing */
+    transition: transform 0.3s, color 0.3s; /* Transition for effects */
+}
+
+.sign-up-text:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+    color: #05b462; /* Change color on hover */
+}
+
+input {
+    margin: 15px 0; /* Increased spacing */
+    padding: 15px; /* Increased padding for a better touch area */
+    font-size: 16px;
+    width: 100%; /* Full width */
+    border: 2px solid #ccc; /* Thicker border */
+    border-radius: 10px; /* Rounded corners for inputs */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Added box-shadow transition */
+}
+
+input:focus {
+    border-color: #0824d7; /* Change border color on focus */
+    outline: none; /* Remove outline */
+    box-shadow: 0 0 5px rgba(9, 78, 207, 0.5); /* Glow effect on focus */
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Keep buttons spaced out */
+    width: 100%; /* Full width */
+    max-width: 350px; /* Limit max width */
+    margin-top: 20px; /* Add margin for spacing */
+}
+
+button {
+    padding: 10px; /* Reduced padding for smaller buttons */
+    width: 100px; /* Set a fixed width for buttons */
+    background-color: #051fb4;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    font-size: 14px; /* Reduced font size */
+    border-radius: 10px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for button effects */
+}
+
+button:hover {
+    background-color: #0421a4; /* Darker shade on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.client-login {
+    background-color: #007bff; /* Blue color for client login */
+}
+
+.customer-login {
+    background-color: #700bd4; /* Red color for customer login */
+}
+
+.client-login:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.customer-login:hover {
+    background-color: #002ec7; /* Darker red on hover */
+}
+
+.footer {
+    margin-top: 20px; /* Space between form and footer */
+    color: white;
+    font-size: 14px; /* Adjusted font size */
+}
+
+.footer a {
+    color: #05b462; /* Link color */
+    text-decoration: underline; /* Underline links */
+}
+
+.footer a:hover {
+    color: #04a456; /* Darker shade on hover */
+}
