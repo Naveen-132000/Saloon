@@ -1,12 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Homepage.css"; // Ensure this imports the updated styles
+import "./Homepage.css";
 
 const Homepage = () => {
-    const navigate = useNavigate(); // Initialize the navigate function
+    const navigate = useNavigate();
 
     const handleLoginClick = () => {
-        navigate("/login"); // Navigate to the login page
+        navigate("/login");
     };
 
     return (
@@ -16,6 +16,7 @@ const Homepage = () => {
                 <button className="login-button" onClick={handleLoginClick}>Login</button>
             </nav>
 
+            {/* Centered Search Bar */}
             <div className="search-bar">
                 <form>
                     <div className="search-component">
@@ -41,23 +42,59 @@ const Homepage = () => {
                 </form>
             </div>
 
-            <div className="recommendation-section">
-                <h2>Recommended Salons</h2>
-                <div className="recommendation-cards">
-                    <div className="card">
-                        <img src="https://c4.wallpaperflare.com/wallpaper/800/831/598/digital-art-neon-mountains-lake-wallpaper-preview.jpg" alt="Salon 1" />
-                        <h3>Salon One</h3>
-                        <p>Rating: ⭐⭐⭐⭐</p>
+            {/* Scrollable Content */}
+            <div className="scrollable-content">
+                {/* Recommendation Section */}
+                <div className="recommendation-section">
+                    <h2>Recommended Salons</h2>
+                    <div className="recommendation-cards">
+                        <div className="card">
+                            <h3>Salon One</h3>
+                            <p>Rating: ⭐⭐⭐⭐</p>
+                        </div>
+                        <div className="card">
+                            <h3>Salon Two</h3>
+                            <p>Rating: ⭐⭐⭐⭐⭐</p>
+                        </div>
+                        <div className="card">
+                            <h3>Salon Three</h3>
+                            <p>Rating: ⭐⭐⭐</p>
+                        </div>
                     </div>
-                    <div className="card">
-                        <img src="https://c4.wallpaperflare.com/wallpaper/800/831/598/digital-art-neon-mountains-lake-wallpaper-preview.jpg" alt="Salon 2" />
-                        <h3>Salon Two</h3>
-                        <p>Rating: ⭐⭐⭐⭐⭐</p>
+                </div>
+
+                {/* Testimonials Section */}
+                <div className="testimonial-section">
+                    <h2>What Our Clients Say</h2>
+                    <div className="testimonial-cards">
+                        <div className="card">
+                            <p>"Amazing service!"</p>
+                            <h3>Client One</h3>
+                        </div>
+                        <div className="card">
+                            <p>"Best experience ever!"</p>
+                            <h3>Client Two</h3>
+                        </div>
+                        <div className="card">
+                            <p>"Highly recommend this saloon!"</p>
+                            <h3>Client Three</h3>
+                        </div>
                     </div>
-                    <div className="card">
-                        <img src="https://c4.wallpaperflare.com/wallpaper/800/831/598/digital-art-neon-mountains-lake-wallpaper-preview.jpg" alt="Salon 3" />
-                        <h3>Salon Three</h3>
-                        <p>Rating: ⭐⭐⭐</p>
+                </div>
+
+                {/* Blogs Section */}
+                <div className="blog-section">
+                    <h2>Our Latest Blogs</h2>
+                    <div className="blog-cards">
+                        <div className="card">
+                            <h3>How to Take Care of Your Hair</h3>
+                        </div>
+                        <div className="card">
+                            <h3>Top Trends in Hair Styling</h3>
+                        </div>
+                        <div className="card">
+                            <h3>Benefits of a Spa Treatment</h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,4 +105,5 @@ const Homepage = () => {
         </div>
     );
 };
+
 export default Homepage;
