@@ -9,6 +9,10 @@ const Homepage = () => {
         navigate("/login");
     };
 
+    const handleViewMoreClick = () => {
+        navigate("/blogs");
+    };
+
     return (
         <div className="homepage-container">
             <nav className="navbar">
@@ -96,6 +100,9 @@ const Homepage = () => {
                             <h3>Benefits of a Spa Treatment</h3>
                         </div>
                     </div>
+                    <button className="view-more-button" onClick={handleViewMoreClick}>
+                        View More
+                    </button>
                 </div>
             </div>
 
@@ -105,5 +112,6 @@ const Homepage = () => {
         </div>
     );
 };
+
 
 export default Homepage;

@@ -150,3 +150,22 @@ h2 {
 html {
     scroll-behavior: smooth; /* Smooth scrolling effect */
 }
+.view-more-button {
+    background-color: #151513;
+    color: #ecede1;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: block;
+    margin: 10px auto;
+}
+
+.view-more-button:hover {
+    background-color: #f1b315;
+    transform: scale(1.05);
+}
+

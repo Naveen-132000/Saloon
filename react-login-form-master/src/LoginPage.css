@@ -30,20 +30,6 @@ h2 {
     font-size: 36px; /* Increase font size */
 }
 
-.sign-up-text {
-    color: #fff; /* Sign-up text color */
-    font-size: 24px; /* Increased size */
-    text-align: center; /* Center the sign-up text */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9); /* Shadow for decoration */
-    margin: 20px 0; /* Margin for spacing */
-    transition: transform 0.3s, color 0.3s; /* Transition for effects */
-}
-
-.sign-up-text:hover {
-    transform: scale(1.05); /* Scale effect on hover */
-    color: #05b462; /* Change color on hover */
-}
-
 input {
     margin: 15px 0; /* Increased spacing */
     padding: 15px; /* Increased padding for a better touch area */
@@ -58,6 +44,22 @@ input:focus {
     border-color: #0824d7; /* Change border color on focus */
     outline: none; /* Remove outline */
     box-shadow: 0 0 5px rgba(9, 78, 207, 0.5); /* Glow effect on focus */
+}
+
+/* Style specifically for email and phone number inputs */
+input[type="email"], input[type="tel"] {
+    margin: 15px 0;
+    padding: 15px;
+    font-size: 16px;
+    width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="email"]:focus, input[type="tel"]:focus {
+    border-color: #0824d7;
+    box-shadow: 0 0 5px rgba(9, 78, 207, 0.5);
 }
 
 .button-container {
@@ -90,7 +92,7 @@ button:hover {
 }
 
 .customer-login {
-    background-color: #700bd4; /* Red color for customer login */
+    background-color: #700bd4; /* Purple color for customer login */
 }
 
 .client-login:hover {
@@ -98,7 +100,7 @@ button:hover {
 }
 
 .customer-login:hover {
-    background-color: #002ec7; /* Darker red on hover */
+    background-color: #002ec7; /* Darker purple on hover */
 }
 
 .footer {
