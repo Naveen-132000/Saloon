@@ -120,15 +120,17 @@ button:hover {
 .testimonial-section,
 .blog-section {
     padding: 40px 20px;
-    background-color: #f9f9f9;
+    background-color: #c0c5f0;
     margin: 20px 0;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-    color: #ff6f61;
-    margin-bottom: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #100101;/* Set font color to black */
+  
 }
 
 /* Card Styles */
@@ -202,7 +204,26 @@ html {
     font-size: 28px;
     font-weight: bold;
     color: #fff;
+    font-style: italic; /* Adds an italic effect */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), /* Adds a 3D effect */
+                 -2px -2px 4px rgba(255, 255, 255, 0.2);
+    transform: skewX(-10deg); /* Creates a slanted, sliding effect */
+    font-family: 'Poppins', sans-serif; /* Change font style for a modern look */
+    position: relative;
 }
+
+/* Optional: Add a pseudo-element for an additional 3D shadow layer */
+.navbar-logo::before {
+    content: attr(data-text); /* Duplicate text */
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    z-index: -1;
+    color: rgba(0, 0, 0, 0.3); /* Shadow color */
+    transform: skewX(-10deg); /* Match the main text skew */
+    font-style: italic;
+}
+
 
 .navbar-buttons {
     display: flex;
