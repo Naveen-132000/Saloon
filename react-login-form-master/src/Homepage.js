@@ -1,3 +1,4 @@
+// Homepage.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
@@ -13,11 +14,23 @@ const Homepage = () => {
         navigate("/blogs");
     };
 
+    const handleServicesClick = () => {
+        navigate("/services");
+    };
+
+    const handleContactClick = () => {
+        navigate("/contact");
+    };
+
     return (
         <div className="homepage-container">
             <nav className="navbar">
                 <h1 className="navbar-logo">Saloon App</h1>
-                <button className="login-button" onClick={handleLoginClick}>Login</button>
+                <div className="navbar-buttons">
+                    <button className="services-button" onClick={handleServicesClick}>Services</button>
+                    <button className="login-button" onClick={handleLoginClick}>Login</button>
+                    <button className="contact-button" onClick={handleContactClick}>Contact Us</button> {/* Contact Us button */}
+                </div>
             </nav>
 
             {/* Centered Search Bar */}
@@ -112,6 +125,5 @@ const Homepage = () => {
         </div>
     );
 };
-
 
 export default Homepage;

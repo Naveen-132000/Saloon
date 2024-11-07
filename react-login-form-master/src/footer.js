@@ -7,7 +7,7 @@ const Footer = () => {
       {/* Salon Info Section */}
       <div className="footer-part salon-info">
         <h2>
-          <span className="highlight">S</span>aloon
+          <span className="highlight">S</span>saloon
         </h2>
         <p>
           Welcome to our premium salon, where we offer world-class grooming and

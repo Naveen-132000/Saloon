@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #ffcccb, #ffe5b4); /* Gradient background */
+    background: linear-gradient(to bottom right, #ffcccb, #ffe5b4);
     background-image: url('https://images.unsplash.com/photo-1600948836101-f9ffda59d250?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHNhbG9ufGVufDB8fDB8fHww');
 }
 
@@ -21,20 +21,36 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #7b8bae; /* Bright orange for navbar */
+    padding: 15px;
+    background-color: #294e04;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-logo {
     font-size: 28px;
     font-weight: bold;
-    color: #fff;
+    color: #100101;
+}
+/* Contact Us Button */
+.contact-button {
+    padding: 10px 20px;
+    background-color: #1d55cf; /* Distinct accent color for Contact Us */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #293792; /* Slightly darker shade on hover */
+    transform: scale(1.05);
 }
 
 .login-button {
     padding: 10px 20px;
-    background-color: #007aff; /* Blue button */
+    background-color: #007aff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -44,8 +60,8 @@ body {
 }
 
 .login-button:hover {
-    background-color: #005bb5; /* Darker blue on hover */
-    transform: scale(1.05); /* 3D effect on hover */
+    background-color: #005bb5;
+    transform: scale(1.05);
 }
 
 /* Center the Search Bar */
@@ -53,33 +69,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh; /* Center vertically */
+    height: 90vh;
 }
+
 
 .search-component {
     display: flex;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    border-radius: 25px; /* Rounded corners */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 select, input[type="date"], input[type="time"], button {
-    padding: 10px;
+    padding: 9px;
     font-size: 16px;
-    border: 1px solid #ffab40; /* Orange border */
-    border-radius: 20px;
-    width: 150px; /* Adjust width for smaller screens */
+    border: 1px solid #ffab40;
+    border-radius: 40px;
+    width: 245px;
     transition: border-color 0.3s, transform 0.3s;
 }
 
 select:focus, input[type="date"]:focus, input[type="time"]:focus {
-    border-color: #007aff; /* Blue border on focus */
+    border-color: #007aff;
+    width: 45px;
 }
 
 button {
-    background-color: #ffab40; /* Orange background for buttons */
+    background-color: #ffab40;
     color: white;
     border-radius: 20px;
     cursor: pointer;
@@ -87,13 +105,13 @@ button {
 }
 
 button:hover {
-    background-color: #ff8c00; /* Darker orange on hover */
-    transform: scale(1.05); /* 3D effect on hover */
+    background-color: #ff8c00;
+    transform: scale(1.05);
 }
 
 /* Scrollable Content */
 .scrollable-content {
-    margin-top: 20px; /* Space between search bar and content */
+    margin-top: 20px;
     padding: 40px 20px;
 }
 
@@ -102,15 +120,14 @@ button:hover {
 .testimonial-section,
 .blog-section {
     padding: 40px 20px;
-    background-color: #f9f9f9; /* Light grey for sections */
-    margin: 20px 0; /* Space between sections */
+    background-color: #f9f9f9;
+    margin: 20px 0;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Colorful Section Headings */
 h2 {
-    color: #ff6f61; /* Coral color for section headings */
+    color: #ff6f61;
     margin-bottom: 20px;
 }
 
@@ -124,18 +141,18 @@ h2 {
 }
 
 .card {
-    background-color: #e0f7fa; /* Light cyan for cards */
+    background-color: #e0f7fa;
     border-radius: 15px;
     padding: 20px;
-    width: 200px; /* Fixed width for cards */
+    width: 200px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* Footer Styles */
@@ -146,10 +163,11 @@ h2 {
     text-align: center;
 }
 
-/* Scroll Behavior */
+/* Smooth Scroll */
 html {
-    scroll-behavior: smooth; /* Smooth scrolling effect */
+    scroll-behavior: smooth;
 }
+
 .view-more-button {
     background-color: #151513;
     color: #ecede1;
@@ -169,3 +187,52 @@ html {
     transform: scale(1.05);
 }
 
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #7b8bae;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.services-button,
+.login-button {
+    padding: 10px 20px;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.services-button:hover,
+.login-button:hover {
+    background-color: #005bb5;
+    transform: scale(1.05);
+}
+
+/* Center the Search Bar */
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* Other styles remain the same */
