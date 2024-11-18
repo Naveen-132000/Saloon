@@ -1,2 +1,9 @@
-# _fresha_cloning
+
 -internship
+//frontend
+npm i
+npm start
+
+
+//backend
+node server.js
