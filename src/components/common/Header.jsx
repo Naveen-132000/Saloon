@@ -17,20 +17,21 @@ export default function Header() {
 
   return (
     <>
-      <div className="container-fluid bg-dark px-0">
+      <div className="container-fluid" style={{ background: "linear-gradient(to right, #f8e2ff, #d0e4f7)" }}>
         <div className="row gx-0">
-          <div className="col-lg-3 bg-dark d-none d-lg-block">
+          <div className="col-lg-3" style={{ background: "linear-gradient(to right, #f8e2ff, #d0e4f7)" }}>
             <Link
               to="/"
               className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
+              style={{ color: "black" }} // Make "SALOON" text black
             >
-              <h1 className="m-0 text-primary text-uppercase">Saloon</h1>
+              <h1 className="m-0 text-uppercase">Saloon</h1>
             </Link>
           </div>
           <div className="col-lg-9">
-            <nav className="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-              <Link to="/" className="navbar-brand d-block d-lg-none">
-                <h1 className="m-0 text-primary text-uppercase">Saloon</h1>
+            <nav className="navbar navbar-expand-lg navbar-dark p-3 p-lg-0" style={{ background: "linear-gradient(to right, #f8e2ff, #d0e4f7)" }}>
+              <Link to="/" className="navbar-brand d-block d-lg-none" style={{ color: "black" }}>
+                <h1 className="m-0 text-uppercase">Saloon</h1>
               </Link>
               <button
                 type="button"
@@ -42,11 +43,11 @@ export default function Header() {
               <div
                 className={
                   navbarCollapse
-                    ? "navbar-collapse justify-content-around navbarCollapse"
-                    : "collapse navbar-collapse justify-content-around"
+                    ? "navbar-collapse justify-content-end navbarCollapse"
+                    : "collapse navbar-collapse justify-content-end"
                 }
               >
-                <div className="navbar-nav mr-auto py-0">
+                <div className="navbar-nav py-0">
                   {navList.map((item, index) => (
                     <div key={index}>
                       {item.subItems ? (
@@ -55,7 +56,7 @@ export default function Header() {
                           onMouseEnter={() => handleMouseEnter(item.id)}
                           onMouseLeave={handleMouseLeave}
                         >
-                          <Link className="nav-link dropdown-toggle">
+                          <Link className="nav-link dropdown-toggle" style={{ color: "black" }}>
                             {item.text === "Rooms" ? "Testimonials" : item.text}
                           </Link>
                           <div
@@ -64,19 +65,23 @@ export default function Header() {
                             }`}
                           >
                             {item.subItems.map((sub) => (
-                              <Link to={sub.path} className="dropdown-item">
+                              <Link to={sub.path} className="dropdown-item" style={{ color: "black" }}>
                                 {sub.text}
                               </Link>
                             ))}
                           </div>
                         </div>
                       ) : (
-                        <Link to={item.path} className="nav-item nav-link">
+                        <Link to={item.path} className="nav-item nav-link" style={{ color: "black" }}>
                           {item.text === "Rooms" ? "Testimonials" : item.text}
                         </Link>
                       )}
                     </div>
                   ))}
+                  {/* Adding Blogs link */}
+                  <Link to="/blogs" className="nav-item nav-link" style={{ color: "black" }}>
+                    Blogs
+                  </Link>
                 </div>
                 <SocialIcons />
               </div>
