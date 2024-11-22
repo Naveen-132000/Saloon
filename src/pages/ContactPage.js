@@ -23,7 +23,7 @@ export default function Contact() {
     event.preventDefault();
 
     try {
-      const response = await fetch('/submit-testimonial', {
+      const response = await fetch('/submit-contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,7 +32,8 @@ export default function Contact() {
       });
 
       const result = await response.json();
-      if (result.success) {
+
+      if (response.ok) { // Check if the response status is OK (200)
         alert('Message sent successfully!');
         setFormData({
           name: '',

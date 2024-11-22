@@ -2,7 +2,7 @@ const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-        const response = await fetch('http://localhost:3004/submit-contact', { // Ensure full backend URL
+        const response = await fetch('http://localhost:3000/submit-contact', { // Ensure full backend URL
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -21,16 +21,45 @@ export default function Header() {
     setShowLocationOptions(false);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Booking Details:", { service, location, date, time });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+  
+    const data = {
+      service: service,  // Get values from your form inputs
+      location: location,
+      date: date,
+      time: time
+    };
+  
+    try {
+      const response = await fetch('http://localhost:3000/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+  
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log('Booking saved:', responseData);
+        alert('Booking successfully saved');
+      } else {
+        const errorText = await response.text();  // Get error message from response
+        console.error('Error:', errorText);
+        alert('Failed to save booking: ' + errorText);  // Display server error message
+      }
+    } catch (error) {
+      console.error('Request failed:', error);
+      alert('There was an error processing your booking. Please try again.');
+    }
   };
+  
 
   return (
     <div
       className="header"
       style={{
-        // background: "linear-gradient(to right, #f8e2ff, #d0e4f7)" like fresha,
         background: "linear-gradient(to right, #f8e2ff, #d0e4f7)",
         height: "100vh",
         display: "flex",
@@ -44,7 +73,7 @@ export default function Header() {
         <h1 style={{ fontSize: "3rem", fontWeight: "bold", marginBottom: "1.5rem", color: "#333" }}>
           Book local beauty and wellness services
         </h1>
-        <form onSubmit={handleSubmit} className="search-form">
+        <form onSubmit={handleSubmit}>
           <div
             className="search-bar"
             style={{
@@ -201,7 +230,7 @@ export default function Header() {
                 marginLeft: "15px",
               }}
             >
-              Search
+              Book
             </button>
           </div>
         </form>

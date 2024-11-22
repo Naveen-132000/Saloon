@@ -1,75 +1,56 @@
-import React, { useState } from "react";
+const express = require('express');
+const mysql = require('mysql');
+const cors = require('cors');
+const bodyParser = require('body-parser'); // Added for parsing POST request body
 
-export default function Book() {
-  const [service, setService] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
+const app = express();
+const port = 3000;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle the form submission, e.g., send the booking details to the server
-    console.log("Booking Details:", { service, date, time });
-  };
+// Enable CORS
+app.use(cors());
 
-  return (
-    <>
-      <div
-        className="container-fluid booking pb-5 wow fadeIn"
-        data-wow-delay="0.1s"
-      >
-        <div className="container">
-          <div className="bg-white shadow" style={{ padding: "35px" }}>
-            <form onSubmit={handleSubmit}>
-              <div className="row g-2 justify-content-center">
-                {/* Service Selection */}
-                <div className="col-md-3">
-                  <select
-                    className="form-select"
-                    value={service}
-                    onChange={(e) => setService(e.target.value)}
-                    required
-                  >
-                    <option value="" disabled>Select Service</option>
-                    <option value="Haircut">Haircut</option>
-                    <option value="Facial">Facial</option>
-                    <option value="Manicure">Manicure</option>
-                    <option value="Pedicure">Pedicure</option>
-                  </select>
-                </div>
-                
-                {/* Date Selection */}
-                <div className="col-md-3">
-                  <input
-                    type="date"
-                    className="form-control"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                    required
-                  />
-                </div>
-                
-                {/* Time Selection */}
-                <div className="col-md-3">
-                  <input
-                    type="time"
-                    className="form-control"
-                    value={time}
-                    onChange={(e) => setTime(e.target.value)}
-                    required
-                  />
-                </div>
-                
-                {/* Submit Button */}
-                <div className="col-md-3">
-                  <button type="submit" className="btn btn-primary w-100">
-                    Book Now
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
+// Body parser middleware to handle JSON
+app.use(bodyParser.json());
+
+// MySQL Database connection
+const db = mysql.createConnection({
+  host: 'localhost',          // Host for your MySQL instance
+  user: 'root',               // MySQL username
+  password: 'root123',        // MySQL password
+  database: 'saloon',         // Your database/schema name
+  port: 3306                  // Default MySQL port, change if your MySQL instance uses a different port
+});
+
+// Connect to MySQL
+db.connect((err) => {
+  if (err) {
+    console.error('Error connecting to database:', err);
+    return;
+  }
+  console.log('Connected to MySQL');
+});
+
+// Handle the POST request at /submit
+app.post('/submit', (req, res) => {
+  const { service, location, date, time } = req.body;
+
+  if (!service || !location || !date || !time) {
+    return res.status(400).json({ message: 'All fields are required' });
+  }
+
+  // Insert into listbooking table
+  const query = 'INSERT INTO listbooking (service, location, date, time) VALUES (?, ?, ?, ?)';
+  db.query(query, [service, location, date, time], (err, result) => {
+    if (err) {
+      console.error('Error inserting data:', err);
+      return res.status(500).send('Server error');
+    }
+
+    res.status(200).json({ message: 'Booking saved successfully', bookingId: result.insertId });
+  });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
